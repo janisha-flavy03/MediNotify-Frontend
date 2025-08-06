@@ -1,0 +1,127 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.login-bg-gradient {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #fff 0%, #fff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login-bg-gradient .login-card-img1 {
+  background: #fff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 36px rgba(32, 52, 99, 0.14) !important;
+  width: 100%;
+  max-width: 378px;
+  padding: 32px 34px 38px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-bg-gradient .login-title-img1 {
+  color: #267de6;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.01em;
+}
+
+.login-bg-gradient .login-form-img1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-bg-gradient .login-field-img1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login-bg-gradient .login-field-img1 label {
+  font-size: 1.05rem;
+  color: #61688f;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.login-bg-gradient .login-field-img1 input {
+  border: 1.5px solid #b1d7fa;
+  background: #f9fbff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 1.01rem;
+  outline: none;
+  transition: border 0.14s;
+}
+.login-bg-gradient .login-field-img1 input:focus {
+  border-color: #438ee6;
+  background: #fff;
+}
+
+.login-bg-gradient .login-btn-img1 {
+  margin-top: 16px;
+  width: 100%;
+  padding: 13px 0;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.15rem;
+  background: linear-gradient(90deg, #438ee6 65%, #986bda 100%) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 14px rgba(32, 52, 99, 0.08);
+  transition: background 0.13s, box-shadow 0.13s, transform 0.11s;
+  cursor: pointer;
+}
+
+.login-bg-gradient .login-btn-img1:disabled {
+  background: #b8cae5 !important;
+  color: #fff !important;
+  cursor: not-allowed;
+}
+.login-bg-gradient .login-btn-img1:not(:disabled):hover,
+.login-bg-gradient .login-btn-img1:not(:disabled):focus {
+  background: linear-gradient(90deg, #2271c4 62%, #7c52aa 100%) !important;
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 7px 22px rgba(32, 52, 99, 0.13);
+}
+
+.login-links-row {
+  margin-top: 22px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.login-link {
+  color: #267de6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: color 0.12s;
+}
+.login-link span { color: #9038d6; }
+.login-link:hover { color: #8242c0; text-decoration: underline;}
+.login-link-text {
+  font-size: 0.93rem;
+  color: #727684;
+  margin-left: 2px;
+}
+
+@media (max-width: 530px) {
+  .login-bg-gradient .login-card-img1 {
+    padding: 18px 4vw;
+    max-width: 99vw;
+  }
+}

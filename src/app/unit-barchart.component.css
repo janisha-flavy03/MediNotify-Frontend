@@ -1,0 +1,18 @@
+.stock-bar-title {
+  font-size: 1.55rem;
+  color: #2066a0;
+  font-weight: 700;
+  margin: 58px 0 28px 8px;
+  letter-spacing: 0.03em;
+}
+canvas {
+  display: block;
+  margin: 0 auto 46px auto;
+  width: 100%;
+  max-width: 860px;
+  min-height: 320px;
+  background: #f7fafc;
+  border-radius: 16px;
+  box-shadow: 0 2px 22px rgba(32,52,99,0.07);
+  padding: 38px 0 30px 0;
+}

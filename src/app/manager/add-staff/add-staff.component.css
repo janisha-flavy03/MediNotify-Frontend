@@ -1,0 +1,132 @@
+.staff-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.staff-header-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2066a0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-top: 50px;
+}
+
+.staff-title-row {
+  display: flex;
+  justify-content: center;
+}
+.staff-subtitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 18px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.staff-form-main-vert {
+  background: #fff;
+  border-radius: 15px;
+  max-width: 490px;
+  margin: 0 auto;
+  padding: 34px 30px 34px 30px;
+  box-shadow: 0 2px 16px rgba(32,52,99,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.staff-vert-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.staff-vert-field label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #4e6983;
+  font-weight: 500;
+}
+.staff-vert-field input {
+  padding: 8px 11px;
+  border-radius: 7px;
+  border: 1px solid #c3d5eb;
+  background: #f7fafc;
+  font-size: 1rem;
+  transition: border 0.15s;
+}
+.staff-vert-field input:focus {
+  border: 1.2px solid #349efa;
+  outline: none;
+}
+
+/* Register Staff button row */
+.staff-btn-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+.register-btn {
+  min-width: 155px;
+  padding: 11px 30px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #2a9efa 60%, #2066a0 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  font-size: 1.07rem;
+  box-shadow: 0 3px 18px rgba(32, 52, 99, 0.13);
+  transition: background 0.14s, box-shadow 0.14s, transform 0.1s;
+}
+.register-btn:hover, .register-btn:focus {
+  background: linear-gradient(90deg, #2066a0 60%, #2a9efa 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 26px rgba(32, 52, 99, 0.17);
+}
+
+.staff-viewall-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 36px 0 0 0;
+}
+.viewall-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  background: linear-gradient(90deg, #2a9efa 60%, #026ddb 100%);
+  color: #fff;
+  border: none;
+  padding: 16px 60px;
+  border-radius: 40px;
+  box-shadow: 0 3px 22px rgba(32, 52, 99, 0.17);
+  transition: background 0.13s, box-shadow 0.11s, transform 0.11s;
+  display: inline-flex;
+  align-items: center;
+}
+.viewall-btn:hover,
+.viewall-btn:focus {
+  background: linear-gradient(90deg, #026ddb 60%, #2a9efa 100%);
+  box-shadow: 0 8px 32px rgba(32, 52, 99, 0.19);
+  transform: translateY(-1.5px) scale(1.035);
+}
+.viewall-btn i {
+  font-size: 1.3rem;
+}
+
+.success {
+  color: #1ca669;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.error {
+  color: #d53a3a;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}

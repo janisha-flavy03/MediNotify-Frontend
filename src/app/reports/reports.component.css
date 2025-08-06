@@ -1,0 +1,113 @@
+.stock-report-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  width: 100vw;
+  box-sizing: border-box;
+  /* Add outer margins to everything */
+  padding: 0 5vw 60px 5vw;  /* 5vw left/right = responsive margins */
+}
+
+.stock-report-card {
+  width: 100%;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.stock-report-header {
+  background: linear-gradient(90deg, #2066a0 62%, #5fc0fc 100%);
+  padding: 50px 0 32px 0;
+  border-radius: 0 0 22px 22px;
+  text-align: left;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(32,52,99,0.13);
+}
+.stock-report-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left: 46px;
+  letter-spacing: 0.04em;
+}
+.stock-unit-select-row {
+  margin: 40px 0 36px 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 1.17rem;
+  padding-left: 46px;
+}
+.stock-unit-select-row label {
+  font-size: 1.13rem;
+  color: #256cb9;
+  font-weight: 600;
+}
+.stock-unit-select-row select {
+  padding: 12px 17px;
+  border-radius: 9px;
+  border: 1.7px solid #b4d6f9;
+  background: #f7fafc;
+  font-size: 1.13rem;
+  color: #234e72;
+  min-width: 160px;
+  outline: none;
+}
+.stock-unit-select-row select:focus {
+  border-color: #349efa;
+  background: #fff;
+}
+
+/* MAIN CHART CARD */
+.stock-pie-visual-card {
+  width: 100%;
+  background: #fff;
+  /* Spread out, but with generous margin */
+  margin: 34px 0 0 0;
+  border-radius: 22px;
+  box-shadow: 0 12px 54px rgba(49,92,170,0.12);
+  border: 2px solid #cfe7f9;
+  padding: 0 4vw 0 4vw;         /* Spread out with responsive margins */
+}
+
+.stock-pie-header {
+  font-size: 1.35rem;
+  font-weight: 670;
+  color: #184062;
+  margin: 32px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.stock-pie-header small {
+  color: #1871b5;
+  font-size: 1.07rem;
+  margin-left: 14px;
+}
+
+.stock-pie-chartbox {
+  /* Reduced padding for more compact, less “empty” look */
+  background: #f7fbff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  padding: 18px 0 14px 0;    /* **Reduced padding!** */
+}
+canvas {
+  width: 100%;
+  min-width: 180px;
+  max-width: 680px;
+  height: 320px !important;
+  max-height: 375px;
+  margin: 0 auto;
+  display: block;
+  background: transparent;
+}
+@media (max-width: 850px) {
+  .stock-report-header, .stock-unit-select-row { padding-left: 10px; }
+  .stock-pie-visual-card { padding: 0 1vw; }
+  .stock-pie-chartbox { min-height: 180px; }
+  .stock-pie-header { font-size: 1.1rem; }
+}

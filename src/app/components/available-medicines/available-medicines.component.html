@@ -1,0 +1,51 @@
+<div class="medicines-bg">
+  <div class="medicines-main-split">
+    <!-- LEFT: Medicines Table Card -->
+    <div class="medicines-table-card">
+      <div class="medicines-headerbar">
+        <span class="medicines-title">Available Medicines</span>
+      </div>
+      <table class="medicines-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Batch No</th>
+            <th>Expiry Date</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Min Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let med of medicines">
+            <td>{{ med.name }}</td>
+            <td>{{ med.batchNo }}</td>
+            <td>{{ med.expiryDate | date:'MMM d, y' }}</td>
+            <td>{{ med.quantity }}</td>
+            <td>{{ med.unit }}</td>
+            <td>{{ med.minLevel }}</td>
+          </tr>
+          <tr *ngIf="medicines.length === 0">
+            <td colspan="6" class="text-center">No medicines available.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RIGHT: Low Stock Alert Panel -->
+    <div *ngIf="lowStockMedicines.length > 0" class="medicines-alert-card">
+      <div class="lowstock-title">
+        <span class="alert-icon">⚠️</span>
+        <span>Low Stock Alert</span>
+      </div>
+      <div class="lowstock-desc">
+        Please restock the following:
+        <ul>
+          <li *ngFor="let med of lowStockMedicines">
+            {{ med.name }} ({{ med.quantity }}/{{ med.minLevel }})
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

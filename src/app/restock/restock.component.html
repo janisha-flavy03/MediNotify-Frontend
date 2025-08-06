@@ -1,0 +1,56 @@
+<div class="restock-bg">
+  <div class="restock-main-card">
+    <div class="restock-headerbar">
+      <span class="restock-title">📦 Restock Log</span>
+    </div>
+    <form (ngSubmit)="addRestock()" class="restock-form">
+      <div class="restock-row">
+        <div class="restock-col">
+          <label>Medicine:</label>
+          <select [(ngModel)]="newRestock.medicineId" name="medicineId" required>
+            <option value="">Select Medicine</option>
+            <option *ngFor="let med of medicines" [value]="med.id">{{ med.name }}</option>
+          </select>
+        </div>
+        <div class="restock-col">
+          <label>Quantity:</label>
+          <input type="number" [(ngModel)]="newRestock.quantityAdded" name="quantityAdded" required />
+        </div>
+        <div class="restock-btn-col">
+          <button type="submit" class="restock-btn restock-btn-add">
+            <i class="bi bi-plus-circle"></i>
+            Add Restock
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="restock-table-card">
+    <h3>Restock History</h3>
+    <table class="restock-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of restockLogs">
+          <td>{{ log.id }}</td>
+          <td>{{ log.medicine?.name || log.medicineId }}</td>
+          <td>{{ log.quantityAdded }}</td>
+          <td>{{ log.dateRestocked | date: 'short' }}</td>
+          <td>
+            <button class="restock-btn restock-btn-delete" (click)="deleteRestock(log.id!)">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

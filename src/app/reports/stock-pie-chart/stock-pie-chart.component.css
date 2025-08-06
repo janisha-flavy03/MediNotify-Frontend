@@ -1,0 +1,126 @@
+.stock-report-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  width: 100vw;
+  padding: 0 0 60px 0;
+  box-sizing: border-box;
+}
+
+/* Main dashboard card flows wide, with padding */
+.stock-report-card {
+  background: transparent;
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 0;
+}
+
+/* Header as full-width “banner” */
+.stock-report-header {
+  width: 100%;
+  background: linear-gradient(90deg, #2066a0 62%, #5fc0fc 100%);
+  padding: 48px 0 32px 0;
+  border-radius: 0 0 22px 22px;
+  text-align: left;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(32,52,99,0.13);
+}
+.stock-report-title {
+  color: #fff;
+  font-size: 2.08rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-left: 48px;
+}
+
+/* Unconfined, centered row for selector */
+.stock-unit-select-row {
+  margin: 32px 0 36px 0;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 1.16rem;
+  padding-left: 48px;
+}
+.stock-unit-select-row label {
+  font-size: 1.13rem;
+  color: #256cb9;
+  font-weight: 600;
+}
+.stock-unit-select-row select {
+  padding: 13px 19px;
+  border-radius: 9px;
+  border: 1.8px solid #b4d6f9;
+  background: #f7fafc;
+  font-size: 1.13rem;
+  color: #234e72;
+  min-width: 180px;
+  outline: none;
+  transition: border 0.15s;
+}
+.stock-unit-select-row select:focus {
+  border-color: #349efa;
+  background: #fff;
+}
+
+/* Full-width, modern chart card */
+.stock-pie-visual-card {
+  width: 100%;
+  background: #fff;
+  padding: 58px 5vw 54px 5vw;
+  margin-top: 30px;
+  border-radius: 23px;
+  box-shadow: 0 12px 54px rgba(49,92,170,0.10);
+  border: 2.1px solid #cfe7f9;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.stock-pie-header {
+  font-size: 1.39rem;
+  font-weight: 650;
+  color: #21548c;
+  margin-bottom: 26px;
+  letter-spacing: 0.03em;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+.stock-pie-header small {
+  color: #1871b5;
+  font-size: 1.07rem;
+  font-weight: 400;
+  margin-left: 16px;
+  letter-spacing: 0.03em;
+}
+.stock-pie-canvas-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+  background: #f7fbff;
+  border-radius: 15px;
+}
+
+canvas {
+  width: 100%;
+  min-width: 220px;     /* Always stretch horizontally */
+  max-width: 700px;
+  height: 340px !important;
+  max-height: 380px;
+  margin: 0 auto;
+  display: block;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .stock-pie-visual-card { padding: 30px 2vw 30px 2vw; }
+}
+@media (max-width: 700px) {
+  .stock-report-header,
+  .stock-unit-select-row { padding-left: 12px; }
+  .stock-pie-header { font-size: 1.08rem; }
+  .stock-pie-visual-card { padding: 16px 0 16px 0; }
+  canvas { max-width: 98vw; min-width: 150px; height: 220px !important; }
+}

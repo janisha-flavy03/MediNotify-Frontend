@@ -1,0 +1,159 @@
+.manage-staff-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  box-sizing: border-box;
+  padding: 0;
+}
+.manage-staff-header {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #2066a0;
+  text-align: center;
+  margin-top: 32px;
+  letter-spacing: 0.5px;
+}
+.manage-staff-title {
+  font-size: 1.58rem;
+  font-weight: 600;
+  color: #24334c;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.staff-table-panel {
+  margin: 0 auto 55px auto;
+  max-width: 1160px;
+  border: 1.5px solid #afd9f6;
+  border-radius: 14px;
+  background: #fff;
+  padding: 30px 0 30px 0;
+  box-sizing: border-box;
+}
+
+.manage-table {
+  width: 96%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.09rem;
+  background: transparent;
+}
+.manage-table thead tr {
+  border-bottom: 1.7px solid #afd9f6;
+}
+.manage-table thead th {
+  background: #f3f9fe;
+  color: #2066a0;
+  font-weight: 650;
+  padding: 13px 12px;
+  text-align: left;
+  border-bottom: 1.7px solid #bde2fb;
+  font-size: 1.08rem;
+  letter-spacing: 0.23px;
+}
+.manage-table tbody tr {
+  background: #fff;
+  border-bottom: 1.2px solid #e4f1fa;
+  transition: background 0.09s;
+}
+.manage-table tbody tr:hover {
+  background: #f1f8fd;
+}
+.manage-table td {
+  padding: 13px 12px;
+  vertical-align: middle;
+  background: transparent;
+  color: #27304a;
+  font-size: 1.07rem;
+  border: none;
+}
+.manage-table td:first-child,
+.manage-table th:first-child {
+  border-left: 2px solid #afd9f6;
+}
+.manage-table td:last-child,
+.manage-table th:last-child {
+  border-right: 2px solid #afd9f6;
+}
+.email-cell {
+  font-size: 0.98rem;
+  color: #6386a3;
+  word-break: break-all;
+  line-height: 1.45;
+}
+
+/* Input fields (edit mode) */
+.manage-table td input {
+  width: 100%;
+  padding: 7px 8px;
+  border-radius: 6px;
+  border: 1.1px solid #baddf8;
+  background: #f9fcff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.manage-table td input:focus {
+  border: 1.3px solid #39a2ec;
+  background: #fff;
+  outline: none;
+}
+
+/* BUTTON GROUP: neat, side-by-side, fixed spacing */
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.action-btn {
+  border: none;
+  border-radius: 18px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 7px 22px 7px 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: #e2ecf7;
+  color: #2066a0;
+  transition: background 0.12s, color 0.12s;
+  outline: none;
+  box-shadow: none;
+  margin: 0;
+}
+
+/* Specific color for each action */
+.action-edit {
+  background: #e8f1fc;
+  color: #216eea;
+}
+.action-edit:hover { background: #cbe3fa; }
+
+.action-delete {
+  background: #fbe3e3;
+  color: #de4343;
+}
+.action-delete:hover { background: #facaca; color:#a62626; }
+
+.action-save {
+  background: #daf7ed;
+  color: #18a674;
+}
+.action-save:hover { background: #b3f0dc; color: #0a7247; }
+
+.action-cancel {
+  background: #eef0f3;
+  color: #858a91;
+}
+.action-cancel:hover { background: #e0eaf0; color: #373b44; }
+
+.action-btn i {
+  font-size: 1.08em;
+}
+
+/* Responsive: make table scroll on very small screens */
+@media (max-width: 800px) {
+  .staff-table-panel { padding: 16px 0; }
+  .manage-table { font-size: 1.00rem; }
+  .manage-table th, .manage-table td { padding: 8px 8px; }
+}

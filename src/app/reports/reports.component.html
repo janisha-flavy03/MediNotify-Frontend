@@ -1,0 +1,27 @@
+<div class="stock-report-bg">
+  <div class="stock-report-card">
+    <div class="stock-report-header">
+      <span class="stock-report-title">📊 Stock Report (Per Unit)</span>
+    </div>
+    <div class="stock-unit-select-row">
+      <label for="unit-select">Select Unit:</label>
+      <select id="unit-select" [(ngModel)]="selectedUnit" (change)="onUnitChange()">
+        <option value="">--Choose--</option>
+        <option *ngFor="let unit of availableUnits" [value]="unit">{{ unit }}</option>
+      </select>
+    </div>
+
+    <div class="stock-pie-visual-card">
+      <div class="stock-pie-header">
+        🟪 Stock Share by Category <small>(Click on slice)</small>
+      </div>
+      <div class="stock-pie-chartbox">
+        <canvas baseChart
+          [data]="pieChartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

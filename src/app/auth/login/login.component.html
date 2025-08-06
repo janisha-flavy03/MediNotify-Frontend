@@ -1,0 +1,21 @@
+<div class="login-bg-gradient">
+  <div class="login-card-img1">
+    <h2 class="login-title-img1">Login</h2>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form-img1">
+      <div class="login-field-img1">
+        <label>Email</label>
+        <input type="email" name="email" [(ngModel)]="loginData.email" required />
+      </div>
+      <div class="login-field-img1">
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="loginData.password" required />
+      </div>
+      <button class="login-btn-img1" type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

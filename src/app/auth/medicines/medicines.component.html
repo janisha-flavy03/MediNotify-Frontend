@@ -1,0 +1,84 @@
+<div class="med-bg">
+  <div class="med-form-main">
+    <div class="med-form-header">
+      <span class="med-form-title">{{ editMode ? 'Edit Medicine' : 'Add New Medicine' }}</span>
+    </div>
+    <form (ngSubmit)="editMode ? updateMedicine() : addMedicine()" class="med-form">
+      <div class="med-form-grid">
+        <div class="med-form-col">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="formModel.name" name="name" required />
+        </div>
+        <div class="med-form-col">
+          <label>Batch No</label>
+          <input type="text" [(ngModel)]="formModel.batchNo" name="batchNo" required />
+        </div>
+        <div class="med-form-col">
+          <label>Expiry Date</label>
+          <input type="date" [(ngModel)]="formModel.expiryDate" name="expiryDate" required />
+        </div>
+      </div>
+      <div class="med-form-grid">
+        <div class="med-form-col">
+          <label>Quantity</label>
+          <input type="number" [(ngModel)]="formModel.quantity" name="quantity" required />
+        </div>
+        <div class="med-form-col">
+          <label>Unit</label>
+          <input type="text" [(ngModel)]="formModel.unit" name="unit" />
+        </div>
+        <div class="med-form-col">
+          <label>Min Level</label>
+          <input type="number" [(ngModel)]="formModel.minLevel" name="minLevel" />
+        </div>
+      </div>
+      <div class="med-form-btnrow">
+        <button type="submit" class="med-btn med-btn-primary">
+          <i class="bi" [ngClass]="editMode ? 'bi-arrow-repeat' : 'bi-plus-circle'"></i>
+          {{ editMode ? 'Update' : 'Add' }}
+        </button>
+        <button type="button" class="med-btn med-btn-cancel"
+                (click)="cancelEdit()" *ngIf="editMode">
+          <i class="bi bi-x-circle"></i> Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="med-table-card">
+    <h3>Medicine Inventory</h3>
+    <table class="med-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Batch No</th>
+          <th>Expiry Date</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Min Level</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let med of medicines">
+          <td>{{ med.name }}</td>
+          <td>{{ med.batchNo }}</td>
+          <td>{{ med.expiryDate | date }}</td>
+          <td>{{ med.quantity }}</td>
+          <td>{{ med.unit }}</td>
+          <td>{{ med.minLevel }}</td>
+          <td>
+            <div class="table-btn-group">
+              <button class="med-btn med-btn-edit" (click)="editMedicine(med)">
+                <i class="bi bi-pencil"></i> Edit
+              </button>
+              <button class="med-btn med-btn-delete" (click)="deleteMedicine(med.id)">
+                <i class="bi bi-trash"></i> Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.stock-table-title {
+  font-size: 1.33rem;
+  color: #2066a0;
+  font-weight: 700;
+  margin: 54px 0 24px 6px;
+  letter-spacing: 0.03em;
+}
+
+.stock-unit-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 13px;
+  background: #fff;
+  margin-bottom: 42px;
+}
+.stock-unit-table th {
+  background: #f5faff;
+  color: #2066a0;
+  font-weight: 670;
+  padding: 18px 18px;
+  font-size: 1.09rem;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid #c9e8fb;
+}
+.stock-unit-table td {
+  background: #fafdff;
+  border: 1.1px solid #e4eef9;
+  padding: 17px 16px;
+  border-radius: 7px;
+  font-size: 1.09rem;
+  color: #2b3257;
+  vertical-align: middle;
+}
+.stock-unit-table tr {
+  transition: background 0.12s;
+}
+.stock-unit-table tr:hover td {
+  background: #edf7fb;
+}

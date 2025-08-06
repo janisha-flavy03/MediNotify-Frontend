@@ -1,0 +1,64 @@
+<div class="sales-bg">
+  <div class="sales-main-card">
+    <div class="sales-headerbar">
+      <span class="sales-title">💰 Sales Log</span>
+    </div>
+    <form (ngSubmit)="addSale()" class="sale-form">
+      <div class="sale-row">
+        <div class="sale-col">
+          <label for="medicine">Medicine:</label>
+          <select [(ngModel)]="newSale.medicineId" name="medicineId" required>
+            <option value="0" disabled>Select Medicine</option>
+            <option *ngFor="let med of medicines" [value]="med.id">
+              {{ med.name }} ({{ med.quantity }} in stock)
+            </option>
+          </select>
+        </div>
+        <div class="sale-col">
+          <label for="quantity">Quantity Sold:</label>
+          <input
+            type="number"
+            name="quantitySold"
+            [(ngModel)]="newSale.quantitySold"
+            min="1"
+            required
+          />
+        </div>
+        <div class="sale-btn-col">
+          <button type="submit" class="sale-btn sale-btn-add">
+            <i class="bi bi-plus-circle"></i>
+            Add Sale
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="sales-table-card">
+    <h3>All Sales</h3>
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of salesLogs">
+          <td>{{ sale.id }}</td>
+          <td>{{ sale.medicineId }}</td>
+          <td>{{ sale.quantitySold }}</td>
+          <td>{{ sale.dateSold | date: 'short' }}</td>
+          <td>
+            <button class="sale-btn sale-btn-delete" (click)="deleteSale(sale.id!)">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

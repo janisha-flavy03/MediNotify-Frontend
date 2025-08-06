@@ -1,0 +1,98 @@
+<div class="dashboard-bg">
+  <div class="dashboard-header">
+    <h1 class="fw-bold">Welcome to MediNotify</h1>
+    <p class="dashboard-role">Your role: {{ authService.getRole() }}</p>
+  </div>
+
+  <!-- Manager Dashboard -->
+  <div *ngIf="authService.getRole() === 'Manager'">
+    <div class="dashboard-row">
+      <div class="dashboard-card manager">
+        <div class="icon-softbox"><i class="bi bi-person-plus"></i></div>
+        <div>
+          <h5>Add Staff</h5>
+          <p>Add and manage staff accounts.</p>
+          <a routerLink="/manager/add-staff" class="stretched-link"></a>
+        </div>
+      </div>
+
+      <div class="dashboard-card manager">
+        <div class="icon-softbox"><i class="bi bi-capsule"></i></div>
+        <div>
+          <h5>Manage Medicines</h5>
+          <p>Edit and organize your inventory.</p>
+          <button (click)="goToMedicines()" class="stretched-link btn-transparent"></button>
+        </div>
+      </div>
+
+      <div class="dashboard-card manager">
+        <div class="icon-softbox"><i class="bi bi-receipt"></i></div>
+        <div>
+          <h5>Sales Logs</h5>
+          <p>Review all pharmacy sales.</p>
+          <a routerLink="/sales" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-row">
+      <div class="dashboard-card manager">
+        <div class="icon-softbox"><i class="bi bi-box"></i></div>
+        <div>
+          <h5>Restock Inventory</h5>
+          <p>Update & track medicine availability.</p>
+          <a routerLink="/restock" class="stretched-link"></a>
+        </div>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="icon-softbox"><i class="bi bi-layers"></i></div>
+        <div>
+          <h5>View Available Medicines</h5>
+          <p>Check inventory status & details.</p>
+          <button (click)="goToAvailableMedicines()" class="stretched-link btn-transparent"></button>
+        </div>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="icon-softbox"><i class="bi bi-bar-chart-line"></i></div>
+        <div>
+          <h5>Reports & Analytics</h5>
+          <p>View pharmacy performance and reports.</p>
+          <a routerLink="/reports" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Staff Dashboard -->
+  <div *ngIf="authService.getRole() === 'Staff'">
+    <div class="dashboard-row">
+      <div class="dashboard-card">
+        <div class="icon-softbox"><i class="bi bi-layers"></i></div>
+        <div>
+          <h5>View Available Medicines</h5>
+          <p>Check inventory status & details.</p>
+          <button (click)="goToAvailableMedicines()" class="stretched-link btn-transparent"></button>
+        </div>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="icon-softbox"><i class="bi bi-bar-chart-line"></i></div>
+        <div>
+          <h5>Reports & Analytics</h5>
+          <p>View pharmacy performance and reports.</p>
+          <a routerLink="/reports" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout -->
+  <div class="logout-row">
+    <button (click)="logout()" class="logout-btn shadow">
+      <i class="bi bi-box-arrow-right me-2"></i>
+      Logout
+    </button>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="manage-staff-bg">
+
+  <div style="height: 48px;"></div>
+  <h2 class="manage-staff-title">MANAGE STAFF</h2>
+  <div class="manage-table-outer">
+    <div class="manage-table-container">
+      <table class="manage-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of staffList; let i = index" class="manage-row">
+            <ng-container *ngIf="editIndex === i; else viewMode">
+              <td><input [(ngModel)]="editData.name" /></td>
+              <td><input type="number" [(ngModel)]="editData.age" /></td>
+              <td><input [(ngModel)]="editData.contact" /></td>
+              <td><input [(ngModel)]="editData.address" /></td>
+              <td class="email-cell">{{ s.email }}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="action-btn action-save" (click)="saveEdit()">
+                    <i class="bi bi-check2"></i> Save
+                  </button>
+                  <button class="action-btn action-cancel" (click)="cancelEdit()">
+                    <i class="bi bi-x-lg"></i> Cancel
+                  </button>
+                </div>
+              </td>
+            </ng-container>
+            <ng-template #viewMode>
+              <td>{{ s.name }}</td>
+              <td>{{ s.age }}</td>
+              <td>{{ s.contact }}</td>
+              <td>{{ s.address }}</td>
+              <td class="email-cell">{{ s.email }}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="action-btn action-edit" (click)="enableEdit(i)">
+                    <i class="bi bi-pencil"></i> Edit
+                  </button>
+                  <button class="action-btn action-delete" (click)="deleteStaff(s.id)">
+                    <i class="bi bi-trash"></i> Delete
+                  </button>
+                </div>
+              </td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

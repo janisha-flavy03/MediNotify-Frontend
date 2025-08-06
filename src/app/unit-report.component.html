@@ -1,0 +1,22 @@
+<h2 class="stock-table-title">📦 Medicines in {{ unit }}</h2>
+<div *ngIf="medicines.length === 0">
+  <p>No medicines found in this category.</p>
+</div>
+<table *ngIf="medicines.length > 0" class="stock-unit-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let med of medicines">
+      <td>{{ med.name }}</td>
+      <td>{{ med.quantity }}</td>
+      <td [style.color]="med.quantity < med.minLevel ? 'red' : 'green'">
+        {{ med.quantity < med.minLevel ? 'Low Stock' : 'Sufficient' }}
+      </td>
+    </tr>
+  </tbody>
+</table>

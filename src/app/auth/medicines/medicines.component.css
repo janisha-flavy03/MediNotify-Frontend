@@ -1,0 +1,180 @@
+.med-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  padding: 0 0 50px 0;
+}
+
+/* ----- FORM SECTION ------ */
+.med-form-main {
+  max-width: 670px;
+  margin: 10px auto 44px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 42px rgba(32,52,99,0.15);
+  padding: 0 0 32px 0;
+  overflow: hidden;
+}
+
+/* Header area: full-bleed blue bar */
+.med-form-header {
+  background: linear-gradient(90deg, #2066a0 60%, #58b6fa 100%);
+  padding: 26px 38px;
+  text-align: left;
+}
+.med-form-title {
+  color: #fff;
+  font-size: 1.42rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.med-form {
+  padding: 32px 38px 0 38px;
+}
+
+/* Grid system: separate fields in two horizontal groups, like first image */
+.med-form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 18px;
+}
+.med-form-col {
+  flex: 1 1 165px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels + inputs as outlined "boxes" */
+.med-form label {
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: #3262a2;
+  margin-bottom: 6px;
+  margin-left: 2px;
+}
+.med-form input {
+  border: 1.5px solid #b8d8fa;
+  background: #f9fbfe;
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 1.01rem;
+  outline: none;
+  box-shadow: 0 2px 7px rgba(33,102,192,0.06);
+  transition: border 0.16s;
+  margin-bottom: 0;
+}
+.med-form input:focus {
+  border-color: #349efa;
+  background: #fff;
+}
+
+/* Buttons row */
+.med-form-btnrow {
+  display: flex;
+  gap: 19px;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+.med-btn {
+  font-size: 1.06rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 23px;
+  padding: 12px 34px 12px 21px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.13s, transform 0.09s;
+}
+.med-btn i { font-size: 1.18em; margin-right: 2px; }
+.med-btn-primary {
+  background: linear-gradient(90deg, #278df8 70%, #0f4fa6 100%);
+  color: #fff;
+}
+.med-btn-primary:hover, .med-btn-primary:focus {
+  background: linear-gradient(90deg, #156bb3 50%, #278df8 98%);
+}
+.med-btn-cancel {
+  background: #fbe3e3;
+  color: #d14646;
+}
+.med-btn-cancel:hover, .med-btn-cancel:focus {
+  background: #facaca;
+  color: #a62626;
+}
+.med-btn:active { transform: scale(0.96); }
+
+/* ----- INVENTORY SECTION ------ */
+.med-table-card {
+  max-width: 1160px;
+  margin: 32px auto 10px auto;
+  background: #fff;
+  border: 1.5px solid #afd9f6;
+  border-radius: 15px;
+  padding: 37px 28px 32px 28px;
+  box-sizing: border-box;
+}
+.med-table-card h3 {
+  color: #2066a0;
+  font-weight: bold;
+  font-size: 1.22rem;
+  margin-bottom: 21px;
+  margin-top: 0;
+}
+
+.med-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 9px;
+  background: transparent;
+}
+.med-table thead th {
+  background: #f3f9fe;
+  color: #2066a0;
+  font-weight: 650;
+  padding: 14px 14px;
+  text-align: left;
+  border-bottom: 1.7px solid #bde2fb;
+  font-size: 1.05rem;
+  letter-spacing: 0.17px;
+}
+.med-table tbody tr {
+  background: #fff;
+  border-bottom: 1.2px solid #e4f1fa;
+  transition: background 0.09s;
+}
+.med-table tbody tr:hover {
+  background: #f8fafe;
+}
+.med-table td {
+  padding: 14px 12px;
+  font-size: 1.03rem;
+  color: #27304a;
+  border: none;
+}
+.med-table td:last-child { white-space: nowrap; }
+
+.table-btn-group {
+  display: flex;
+  gap: 10px;
+}
+.med-btn-edit {
+  background: #e8f1fc;
+  color: #216eea;
+}
+.med-btn-edit:hover { background: #cbe3fa; }
+.med-btn-delete {
+  background: #fbe3e3;
+  color: #de4343;
+}
+.med-btn-delete:hover { background: #facaca; color: #a62626; }
+
+/* Responsive adjustments for small screens */
+@media (max-width: 850px) {
+  .med-table-card { padding: 16px 2px 13px 2px; }
+  .med-form-main { max-width: 97vw; }
+  .med-form { padding: 18px 8px 0 8px; }
+  .med-form-grid { flex-direction: column; gap: 0; }
+}

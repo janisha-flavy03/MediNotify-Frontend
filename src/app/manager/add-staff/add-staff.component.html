@@ -1,0 +1,53 @@
+<div class="staff-bg">
+  <!-- Main App Title -->
+ 
+  <div style="height: 32px;"></div>
+  
+  <!-- Add Staff - Centered -->
+  <div class="staff-title-row">
+    <h2 class="staff-subtitle">Add Staff</h2>
+  </div>
+  
+  <div class="staff-form-main-vert">
+    <div *ngIf="message" class="success">{{ message }}</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    
+    <div class="staff-vert-field">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="staff.name" />
+    </div>
+    <div class="staff-vert-field">
+      <label>Age</label>
+      <input type="number" [(ngModel)]="staff.age" />
+    </div>
+    <div class="staff-vert-field">
+      <label>Contact</label>
+      <input type="text" [(ngModel)]="staff.contact" />
+    </div>
+    <div class="staff-vert-field">
+      <label>Address</label>
+      <input type="text" [(ngModel)]="staff.address" />
+    </div>
+    <div class="staff-vert-field">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="staff.email" />
+    </div>
+    <div class="staff-vert-field">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="staff.password" />
+    </div>
+    
+    <!-- Register Staff button -->
+    <div class="staff-btn-row">
+      <button (click)="registerStaff()" class="register-btn">Register Staff</button>
+    </div>
+    
+    <!-- View All Staff button: LARGE and stylish, centered -->
+    <div class="staff-viewall-row">
+      <button (click)="goToManageStaff()" class="viewall-btn">
+        <i class="bi bi-people me-2"></i>
+        View All Staff
+      </button>
+    </div>
+  </div>
+</div>

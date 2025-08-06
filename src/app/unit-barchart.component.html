@@ -1,0 +1,12 @@
+<h2 class="stock-bar-title">📊 Stock Bar Chart for Unit: {{ unit }}</h2>
+
+<div *ngIf="medicines.length === 0">
+  <p>No medicines found in this unit.</p>
+</div>
+
+<canvas *ngIf="medicines.length > 0"
+        baseChart
+        [data]="barChartData"
+        [type]="barChartType"
+        [options]="barChartOptions">
+</canvas>

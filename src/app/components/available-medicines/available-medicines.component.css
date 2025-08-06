@@ -1,0 +1,138 @@
+.medicines-bg {
+  min-height: 100vh;
+  background: #e9f3fb;
+  padding: 0 0 52px 0;
+  box-sizing: border-box;
+}
+
+.medicines-main-split {
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  gap: 38px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+/* Table card: left */
+.medicines-table-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 44px rgba(32,52,99,0.13);
+  border: 1.7px solid #cfe7f9;
+  flex: 1 1 490px;
+  min-width: 350px;
+  max-width: 800px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+}
+
+.medicines-headerbar {
+  background: linear-gradient(90deg, #2066a0 65%, #63c3f9 100%);
+  padding: 32px 42px 24px 42px;
+  border-radius: 18px 18px 0 0;
+}
+.medicines-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.medicines-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 15px 18px;      /* More vertical gap between rows */
+  font-size: 1.13rem;
+  background: transparent;
+  margin-top: 0;
+}
+
+.medicines-table thead th {
+  background: #f5faff;
+  color: #2066a0;
+  font-weight: 700;
+  padding: 21px 22px;         /* Plenty of cell space for uncluttered look */
+  text-align: left;
+  border-bottom: 2.2px solid #c9e8fb;
+  font-size: 1.18rem;
+  border-radius: 8px 8px 0 0;
+  letter-spacing: 0.13px;
+}
+
+.medicines-table tbody tr {
+  background: #fff;
+  border-bottom: 1.5px solid #e4f1fa;
+  box-shadow: 0 3.5px 14px rgba(32,52,99,0.06);
+  border-radius: 9px;
+  transition: background 0.12s, box-shadow 0.13s;
+}
+
+.medicines-table tbody tr:hover {
+  background: #f0f7fd;
+  box-shadow: 0 9px 24px rgba(32,52,99,0.14);
+}
+
+.medicines-table td {
+  padding: 20px 20px;         /* Roomy cells vertically and horizontally */
+  font-size: 1.10rem;
+  color: #24334c;
+  border: none;
+  background: transparent;
+}
+
+.text-center { text-align: center !important; }
+
+/* Low stock: right panel */
+.medicines-alert-card {
+  background: #fffbe8;
+  border: 2.5px solid #fad77b;
+  border-radius: 19px;
+  min-width: 290px;
+  max-width: 340px;
+  box-shadow: 0 4.5px 22px 0 rgba(32,52,99,0.10);
+  padding: 32px 30px 21px 30px;
+  margin-top: 2.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.lowstock-title {
+  font-size: 1.29rem;
+  font-weight: bold;
+  color: #be7a13;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.alert-icon {
+  font-size: 1.26rem;
+}
+.lowstock-desc {
+  font-size: 1.05rem;
+  color: #885f1b;
+  margin-top: 13px;
+}
+.lowstock-desc ul {
+  list-style: disc inside;
+  margin: 8px 0 0 2px;
+  padding: 0;
+}
+.lowstock-desc li {
+  padding-left: 0px;
+  margin-bottom: 3px;
+}
+
+/* Responsive: stack on mobile/tablet */
+@media (max-width: 1150px) {
+  .medicines-main-split { flex-direction: column; gap: 30px; align-items: stretch; }
+  .medicines-alert-card { max-width: 99vw; margin-top: 0; margin-bottom: 10px; }
+  .medicines-table-card { max-width: 98vw; }
+}
+@media (max-width: 600px) {
+  .medicines-table-card { padding: 0 0 6px 0; }
+  .medicines-headerbar, .medicines-alert-card { padding-left: 9px; padding-right: 9px; }
+}
